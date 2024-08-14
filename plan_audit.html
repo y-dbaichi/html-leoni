@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plan Audit</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .form-container h2 {
+        margin-bottom: 20px;
+      }
+      .form-container input,
+      .form-container select,
+      .form-container textarea,
+      .form-container button {
+        display: block;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .form-container button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .form-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Plan Audit</h2>
+      <form
+        id="planAuditForm"
+        method="post"
+        action="http://127.0.0.1:5000/plan_audit"
+      >
+        <input
+          type="text"
+          placeholder="Site / BU / Department"
+          name="site_bu_department"
+          value="WMABE"
+          required
+        />
+        <label for="processes">Processes</label>
+        <select name="processes" required>
+          <option value="P2JO (P5,P6,7)">P2JO (P5,P6,7)</option>
+          <option value="JCB VDA 6.3 (P5,P6,7)">JCB VDA 6.3 (P5,P6,7)</option>
+          <option value="deroulante">deroulante</option>
+          <!-- Add other options here -->
+        </select>
+        <input type="text" placeholder="Auditor" name="auditor" required />
+        <input
+          type="text"
+          placeholder="Co Auditor"
+          name="co_auditor"
+          required
+        />
+
+        <!-- Month fields -->
+        <input
+          type="text"
+          placeholder="Feb"
+          name="feb"
+          id="feb"
+          onchange="disableOtherMonths('feb')"
+        />
+        <input
+          type="text"
+          placeholder="March"
+          name="march"
+          id="march"
+          onchange="disableOtherMonths('march')"
+        />
+        <input
+          type="text"
+          placeholder="Apr"
+          name="apr"
+          id="apr"
+          onchange="disableOtherMonths('apr')"
+        />
+        <input
+          type="text"
+          placeholder="May"
+          name="may"
+          id="may"
+          onchange="disableOtherMonths('may')"
+        />
+        <input
+          type="text"
+          placeholder="June"
+          name="june"
+          id="june"
+          onchange="disableOtherMonths('june')"
+        />
+        <input
+          type="text"
+          placeholder="July"
+          name="july"
+          id="july"
+          onchange="disableOtherMonths('july')"
+        />
+        <input
+          type="text"
+          placeholder="Aug"
+          name="aug"
+          id="aug"
+          onchange="disableOtherMonths('aug')"
+        />
+        <input
+          type="text"
+          placeholder="Sept"
+          name="sept"
+          id="sept"
+          onchange="disableOtherMonths('sept')"
+        />
+        <input
+          type="text"
+          placeholder="Oct"
+          name="oct"
+          id="oct"
+          onchange="disableOtherMonths('oct')"
+        />
+        <input
+          type="text"
+          placeholder="Nov"
+          name="nov"
+          id="nov"
+          onchange="disableOtherMonths('nov')"
+        />
+        <input
+          type="text"
+          placeholder="Dec"
+          name="dec"
+          id="dec"
+          onchange="disableOtherMonths('dec')"
+        />
+        <input
+          type="text"
+          placeholder="Jan"
+          name="jan"
+          id="jan"
+          onchange="disableOtherMonths('jan')"
+        />
+
+        <input type="text" placeholder="Audit ID" name="audit_id" required />
+        <input type="text" placeholder="Result" name="result" required />
+        <input type="text" placeholder="Remark" name="remark" />
+
+        <!-- New fields added based on the bottom of the provided image -->
+
+        <textarea
+          placeholder="Further Remarks"
+          name="further_remarks"
+        ></textarea>
+        <input
+          type="text"
+          placeholder="Issued by (Name / Date / Function)"
+          name="issued_by"
+        />
+        <label for="history_index">History index</label>
+        <input type="date" placeholder="History Index" name="history_index" />
+        <input
+          type="text"
+          placeholder="Revision Changes / Reasons"
+          name="revision_changes_reasons"
+        />
+        <input type="text" placeholder="Distribution" name="distribution" />
+        <input
+          type="text"
+          placeholder="Released by (Name / Date / Function)  "
+          name="Released by (Name / Date / Function)  "
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function disableOtherMonths(selectedId) {
+        const months = [
+          "feb",
+          "march",
+          "apr",
+          "may",
+          "june",
+          "july",
+          "aug",
+          "sept",
+          "oct",
+          "nov",
+          "dec",
+          "jan",
+        ];
+        months.forEach((month) => {
+          if (month !== selectedId) {
+            document.getElementById(month).disabled = true;
+            document.getElementById(month).value = ""; // Clear the value if previously filled
+          }
+        });
+      }
+
+      document.querySelectorAll('input[type="text"]').forEach((input) => {
+        input.addEventListener("focus", function () {
+          if (this.disabled) {
+            alert("Only one month can be selected.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

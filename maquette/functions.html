@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services Page</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        width: 200px;
+        background-color: #336bc5;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      }
+      .navbar a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        margin: 5px 0;
+        border-radius: 4px;
+      }
+      .navbar a:hover {
+        background-color: #575757;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .audit-functions {
+        display: none;
+        margin-top: 20px;
+      }
+      .audit-functions.active {
+        display: block;
+      }
+      .audit-functions span {
+        display: inline-block;
+        margin-right: 20px;
+        font-weight: bold;
+      }
+      .aa:hover {
+        background-color: rgb(11, 222, 11);
+      }
+      .imane:hover {
+        background-color: pink;
+        
+      }
+      .imane{
+        font-size: large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h2>Services</h2>
+      <a href="#">list of authorised</a>
+      <a href="#">ajouter new employee</a>
+      <a href="#">plan audit</a>
+      <a href="#">voir list des audits</a>
+      <a href="#">Audit Result</a>
+      <a href="#">SWOT</a>
+      <a href="#">Date for Corrective Actions</a>
+      <a href="#">VA3011 Encl.1</a>
+      <a href="#" id="checkAudit">Check Specific Audit</a>
+    </div>
+    <div class="content">
+      <h1>Audit Information</h1>
+      <form id="auditForm" onsubmit="showAuditFunctions(event)">
+        <label for="auditId">Enter Audit ID:</label>
+        <input list="auditIds" id="auditId" name="auditId" />
+        <datalist id="auditIds">
+          <option value="ID1"></option>
+          <option value="ID2"></option>
+          <option value="IDuuu"></option>
+          <option value="ID4"></option>
+          <option value="ID5"></option>
+        </datalist>
+        <button class="imane" type="submit">Submit</button>
+      </form>
+      <div class="audit-functions" id="auditFunctions">
+        <h2>Functions for Audit ID: <span id="auditIdDisplay"></span></h2>
+        <span class="aa">Audit Result</span>
+        <span class="aa">SWOT</span>
+        <span class="aa">Date for Corrective Actions</span>
+        <span class="aa">VA3011 Encl.1</span>
+      </div>
+    </div>
+
+    <script>
+      function showAuditFunctions(event) {
+        event.preventDefault(); // Prevent form from submitting
+        const auditId = document.getElementById("auditId").value;
+        document.getElementById("auditIdDisplay").textContent = auditId;
+        document.getElementById("auditFunctions").classList.add("active");
+      }
+    </script>
+  </body>
+</html>

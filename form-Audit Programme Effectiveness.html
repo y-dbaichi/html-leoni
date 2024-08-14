@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input[type="text"],
+      input[type="date"],
+      input[type="number"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="submit_form.php" method="POST">
+      <section>
+        <h2>Scope</h2>
+        <label for="site">Site / BU / Department:</label>
+        <input type="text" id="site" name="site" />
+
+        <label for="processes">Processes:</label>
+        <input type="text" id="processes" name="processes" />
+
+        <label for="auditor">Auditor:</label>
+        <input type="text" id="auditor" name="auditor" />
+
+        <label for="co_auditor">Co Auditor:</label>
+        <input type="text" id="co_auditor" name="co_auditor" />
+
+        <label for="audit_id">Audit ID:</label>
+        <input type="text" id="audit_id" name="audit_id" />
+      </section>
+
+      <section>
+        <h2>Audit Team</h2>
+        <label for="lead_auditor">Lead Auditor:</label>
+        <input type="text" id="lead_auditor" name="lead_auditor" />
+
+        <label for="co_auditor_team">Co-Auditor:</label>
+        <input type="text" id="co_auditor_team" name="co_auditor_team" />
+      </section>
+
+      <section>
+        <h2>Standard</h2>
+        <label for="iatf">IATF 16949:</label>
+        <input type="text" id="iatf" name="iatf" />
+
+        <label for="vda">VDA 6.3:</label>
+        <input type="text" id="vda" name="vda" />
+
+        <label for="csr">CSR:</label>
+        <input type="text" id="csr" name="csr" />
+      </section>
+
+      <section>
+        <h2>Result</h2>
+        <label for="nc1">NC1:</label>
+        <input type="text" id="nc1" name="nc1" />
+
+        <label for="nc2">NC2:</label>
+        <input type="text" id="nc2" name="nc2" />
+
+        <label for="ofi">OFI:</label>
+        <input type="text" id="ofi" name="ofi" />
+
+        <label for="vda_result">VDA 6.3 (Result):</label>
+        <input type="text" id="vda_result" name="vda_result" />
+      </section>
+
+      <section>
+        <h2>Inputs</h2>
+        <label for="no_days">No days:</label>
+        <input type="number" id="no_days" name="no_days" />
+
+        <label for="remark">Remark:</label>
+        <textarea id="remark" name="remark"></textarea>
+
+        <label for="risks">Risks:</label>
+        <textarea id="risks" name="risks"></textarea>
+
+        <label for="objective">Objective:</label>
+        <textarea id="objective" name="objective"></textarea>
+
+        <label for="audit_criteria">Audit Criteria:</label>
+        <textarea id="audit_criteria" name="audit_criteria"></textarea>
+      </section>
+
+      <section>
+        <h2>Method</h2>
+        <label for="onsite">Onsite:</label>
+        <input type="text" id="onsite" name="onsite" />
+
+        <label for="remote">Remote:</label>
+        <input type="text" id="remote" name="remote" />
+
+        <label for="human_interaction">Human interaction:</label>
+        <input type="text" id="human_interaction" name="human_interaction" />
+      </section>
+
+      <section>
+        <h2>Internal WSD Audit follow-up and tracking sheet</h2>
+        <label for="date_of_report">Date of Report:</label>
+        <input type="date" id="date_of_report" name="date_of_report" />
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" />
+
+        <label for="date_pdca_to_submit">Date PDCA to be Submitted:</label>
+        <input
+          type="date"
+          id="date_pdca_to_submit"
+          name="date_pdca_to_submit"
+        />
+
+        <label for="date_pdca_submitted">Date PDCA Submitted:</label>
+        <input
+          type="date"
+          id="date_pdca_submitted"
+          name="date_pdca_submitted"
+        />
+
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea>
+
+        <label for="nc"># Nc:</label>
+        <input type="number" id="nc" name="nc" />
+
+        <label for="nc_open"># Nc Open:</label>
+        <input type="number" id="nc_open" name="nc_open" />
+
+        <label for="expected_closure_date">Expected Closure date:</label>
+        <input
+          type="date"
+          id="expected_closure_date"
+          name="expected_closure_date"
+        />
+
+        <label for="pdca_review_update">PDCA Review Update:</label>
+        <input type="date" id="pdca_review_update" name="pdca_review_update" />
+      </section>
+
+      <section>
+        <h2>Verification of Effectiveness of Implemented Actions</h2>
+        <label for="planned_date_verification"
+          >Planned date of site verification of implemented actions:</label
+        >
+        <input
+          type="date"
+          id="planned_date_verification"
+          name="planned_date_verification"
+        />
+
+        <label for="date_performed_verification"
+          >Date of performed verification:</label
+        >
+        <input
+          type="date"
+          id="date_performed_verification"
+          name="date_performed_verification"
+        />
+
+        <label for="action_plan_effective"
+          >Is action plan effective? (Yes/No):</label
+        >
+        <select id="action_plan_effective" name="action_plan_effective">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </section>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

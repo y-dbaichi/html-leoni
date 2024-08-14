@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buttons Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .buttons-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .buttons-container button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .buttons-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="buttons-container">
+      <h2>Select Function</h2>
+      <button onclick="window.location.href='form.html';">
+        List of Qualified Auditors
+      </button>
+      <button onclick="window.location.href='plan_audit.html';">
+        Plan Audit
+      </button>
+      <button onclick="window.location.href='update_audit.html';">
+        Update Audit
+      </button>
+    </div>
+  </body>
+</html>

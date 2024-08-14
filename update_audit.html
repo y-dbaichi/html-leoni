@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Audit Plan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        margin: 0;
+        padding-top: 50px;
+      }
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 800px;
+        margin-top: 50px;
+      }
+      .form-container h2 {
+        margin-bottom: 20px;
+      }
+      .form-container label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .form-container input[type="text"],
+      .form-container textarea,
+      .form-container select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .form-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Update Audit Plan</h2>
+      <form
+        id="updateAuditForm"
+        method="post"
+        action="http://127.0.0.1:5000/update_audit"
+      >
+        <input type="text" placeholder="Audit ID" name="audit_id" required />
+        <input
+          type="text"
+          placeholder="Site / BU / Department"
+          name="site_bu_department"
+        />
+        <input type="text" placeholder="Processes" name="processes" />
+        <input type="text" placeholder="Auditor" name="auditor" />
+        <input type="text" placeholder="Co Auditor" name="co_auditor" />
+        <input type="text" placeholder="Feb" name="feb" />
+        <input type="text" placeholder="March" name="march" />
+        <input type="text" placeholder="Apr" name="apr" />
+        <input type="text" placeholder="May" name="may" />
+        <input type="text" placeholder="June" name="june" />
+        <input type="text" placeholder="July" name="july" />
+        <input type="text" placeholder="Aug" name="aug" />
+        <input type="text" placeholder="Sept" name="sept" />
+        <input type="text" placeholder="Oct" name="oct" />
+        <input type="text" placeholder="Nov" name="nov" />
+        <input type="text" placeholder="Dec" name="dec" />
+        <input type="text" placeholder="Jan" name="jan" />
+        <input type="text" placeholder="Result" name="result" />
+        <input type="text" placeholder="Remark" name="remark" />
+        <input type="text" placeholder="Status" name="status" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

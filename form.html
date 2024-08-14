@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add New Qualified Person</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      .form-container {
+        font-size: larger;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Take full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+      .form-container h2,
+      .form-container h3 {
+        margin: 0 0 10px 0;
+      }
+      .form-container label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: larger;
+      }
+      .form-container input[type="text"],
+      .form-container textarea {
+        width: calc(100% - 20px); /* Adjust for padding */
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Include padding in width calculation */
+        font-size: larger;
+      }
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: larger;
+        cursor: pointer;
+      }
+      .form-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Add New Qualified Person</h2>
+      <form
+        id="addPersonForm"
+        method="post"
+        action="http://127.0.0.1:5000/add_person"
+      >
+        <input
+          type="text"
+          placeholder="Family Name"
+          name="family_name"
+          required
+        />
+        <input
+          type="text"
+          placeholder="First Name"
+          name="first_name"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Actual job title / position"
+          name="job_title"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Home Plant (LOKID)"
+          name="home_plant"
+          required
+        />
+        <textarea
+          placeholder="Contact information"
+          name="contact_info"
+          required
+        ></textarea>
+
+        <h3>Qualified Auditor</h3>
+        <label>
+          Qualified System Lead Auditor
+          <input type="checkbox" name="qualified_system_lead_auditor" />
+        </label>
+        <label>
+          Qualified System Co-Auditor
+          <input type="checkbox" name="qualified_system_co_auditor" />
+        </label>
+        <input
+          type="text"
+          placeholder="Approved for following customers (System)"
+          name="approved_customers_system"
+        />
+        <label>
+          Qualified Process Lead Auditor
+          <input type="checkbox" name="qualified_process_lead_auditor" />
+        </label>
+        <label>
+          Qualified Process Co-Auditor
+          <input type="checkbox" name="qualified_process_co_auditor" />
+        </label>
+        <input
+          type="text"
+          placeholder="Approved for following customers (Process)"
+          name="approved_customers_process"
+        />
+
+        <h3>General Knowledge</h3>
+        <label>
+          Good knowledge of the LEON Instructions and other standards
+          <input type="checkbox" name="good_knowledge_leon" />
+        </label>
+        <label>
+          Has knowledge/experience in moderation, communication, leadership,
+          project management
+          <input type="checkbox" name="moderation_communication" />
+        </label>
+        <label>
+          Has knowledge in conducting, planning, reporting and close out
+          <input type="checkbox" name="conducting_planning_reporting" />
+        </label>
+        <label>
+          Understands the automotive process approach, including risk-based
+          thinking
+          <input type="checkbox" name="automotive_process_approach" />
+        </label>
+        <label>
+          Knowledge of CSR (Customer Specific Requirements)
+          <input type="checkbox" name="knowledge_csr" />
+        </label>
+        <label>
+          SPC Knowledge
+          <input type="checkbox" name="spc_knowledge" />
+        </label>
+        <label>
+          MSA Knowledge
+          <input type="checkbox" name="msa_knowledge" />
+        </label>
+        <label>
+          APQP Knowledge
+          <input type="checkbox" name="apqp_knowledge" />
+        </label>
+        <label>
+          PPAP Knowledge
+          <input type="checkbox" name="ppap_knowledge" />
+        </label>
+        <label>
+          FMEA Knowledge
+          <input type="checkbox" name="fmea_knowledge" />
+        </label>
+
+        <h3>System Audit</h3>
+        <!-- Add checkboxes and inputs for System Audit -->
+
+        <h3>Process Audit</h3>
+        <!-- Add checkboxes and inputs for Process Audit -->
+
+        <h3>Product Audit</h3>
+        <!-- Add checkboxes and inputs for Product Audit -->
+        <h3>cert</h3>
+        <!-- Add checkboxes and inputs for Product Audit -->
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
